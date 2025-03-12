@@ -1,0 +1,22 @@
+{
+    "name": "hieunv/module-wine-producer",
+    "description": "HieuNV Magento Developer",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "HieuNV",
+            "email": "nvhieu1991@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Hieunv\\WineProducer\\": ""
+        }
+    }
+}

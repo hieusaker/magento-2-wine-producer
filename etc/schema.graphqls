@@ -1,0 +1,9 @@
+interface ProductInterface {
+    producer: String @doc(description: "Producer attribute") @resolver(class: "Hieunv\\WineProducer\\Model\\Resolver\\Product\\Producer")
+}
+
+
+input ProductAttributeFilterInput {
+    producer: FilterTypeInput @doc(description: "Filter by producer")
+}
+

@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+	<table name="hieunv_wine_producer" resource="default" engine="innodb" comment="hieunv_wine_producer Table">
+		<column xsi:type="int" name="producer_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+		<constraint xsi:type="primary" referenceId="PRIMARY">
+			<column name="producer_id"/>
+		</constraint>
+		<column name="enable" nullable="false" xsi:type="boolean" comment="Enable/Disable producer" />
+		<column name="name" nullable="false" xsi:type="varchar" comment="Producer name" length="150" />
+		<column name="description" nullable="true" xsi:type="varchar" comment="Producer description" length="600"/>
+		<column name="image" nullable="true" xsi:type="varchar" comment="Producer image" length="255"/>
+		<column name="website" nullable="true" xsi:type="varchar" comment="Producer website" length="255"/>
+        <index referenceId="HIEUNV_WINE_PRODUCER_ENABLE" indexType="btree">
+            <column name="enable"/>
+        </index>
+	</table>
+</schema>

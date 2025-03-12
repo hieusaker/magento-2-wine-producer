@@ -1,0 +1,40 @@
+Description,Description
+Producer,Producer
+Producer name,Producer name
+General Information,General Information
+Enable Producer,Enable Producer
+Max 150 characters,Max 150 characters
+Max 600 characters,Max 600 characters
+Producer description,Producer description
+Producer Image,Producer Image
+Producer website,Producer website
+Add new Producer,Add new Producer
+ID,ID
+Enable?,Enable?
+Description,Description
+Back,Back
+Save and Continue Edit,Save and Continue Edit
+Save Producer,Save Producer
+Delete Producer,Delete Producer
+Are you sure you want to do this?,Are you sure you want to do this?
+Save and Continue Edit,Save and Continue Edit
+"Producer with id ""%1""" does not exist.","Producer with id ""%1""" does not exist.
+Enabled,Enabled
+Disabled,Disabled
+Something went wrong while saving the file(s).,Something went wrong while saving the file(s).
+File can not be saved to the destination folder.,File can not be saved to the destination folder.
+Something went wrong while saving the file(s).,Something went wrong while saving the file(s).
+Edit,Edit
+Delete,Delete
+Delete Producer,Delete Producer
+Please correct the data sent.,Please correct the data sent.
+Are you sure you want to delete a this producer?,Are you sure you want to delete a this producer?
+This Producer no longer exists.,This Producer no longer exists.
+You saved the Producer.,You saved the Producer.
+Something went wrong while saving the Producer.,Something went wrong while saving the Producer.
+You deleted the Producer.,You deleted the Producer.
+We can't find a Producer to delete.,We can't find a Producer to delete.
+New Producer,New Producer
+Producers,Producers
+"Edit Producer ""%1""","Edit Producer ""%1"""
+

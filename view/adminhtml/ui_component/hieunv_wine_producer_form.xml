@@ -1,0 +1,156 @@
+<?xml version="1.0" ?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+	<argument name="data" xsi:type="array">
+		<item name="js_config" xsi:type="array">
+			<item name="provider" xsi:type="string">hieunv_wine_producer_form.producer_form_data_source</item>
+		</item>
+		<item name="label" xsi:type="string" translate="true">General Information</item>
+		<item name="template" xsi:type="string">templates/form/collapsible</item>
+	</argument>
+	<settings>
+		<buttons>
+			<button name="back" class="Hieunv\WineProducer\Block\Adminhtml\Producer\Edit\BackButton"/>
+			<button name="delete" class="Hieunv\WineProducer\Block\Adminhtml\Producer\Edit\DeleteButton"/>
+			<button name="save" class="Hieunv\WineProducer\Block\Adminhtml\Producer\Edit\SaveButton"/>
+			<button name="save_and_continue" class="Hieunv\WineProducer\Block\Adminhtml\Producer\Edit\SaveAndContinueButton"/>
+		</buttons>
+		<namespace>hieunv_wine_producer_form</namespace>
+		<dataScope>data</dataScope>
+		<deps>
+			<dep>hieunv_wine_producer_form.producer_form_data_source</dep>
+		</deps>
+	</settings>
+	<dataSource name="producer_form_data_source">
+		<argument name="data" xsi:type="array">
+			<item name="js_config" xsi:type="array">
+				<item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+			</item>
+		</argument>
+		<settings>
+			<submitUrl path="*/*/save"/>
+		</settings>
+		<dataProvider name="producer_form_data_source" class="Hieunv\WineProducer\Model\Producer\DataProvider">
+			<settings>
+				<requestFieldName>producer_id</requestFieldName>
+				<primaryFieldName>producer_id</primaryFieldName>
+			</settings>
+		</dataProvider>
+	</dataSource>
+	<fieldset name="general">
+		<settings>
+			<label>General</label>
+		</settings>
+        <field name="enable" sortOrder="10" formElement="checkbox">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">Producer</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>boolean</dataType>
+                <label translate="true">Enable Producer</label>
+                <dataScope>enable</dataScope>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+            </settings>
+            <formElements>
+                <checkbox>
+                    <settings>
+                        <valueMap>
+                            <map name="false" xsi:type="number">0</map>
+                            <map name="true" xsi:type="number">1</map>
+                        </valueMap>
+                        <prefer>toggle</prefer>
+                    </settings>
+                </checkbox>
+            </formElements>
+        </field>
+
+		<field name="name" formElement="input" sortOrder="20">
+			<argument name="data" xsi:type="array">
+				<item name="config" xsi:type="array">
+					<item name="source" xsi:type="string">Producer</item>
+                    <item name="notice" xsi:type="string" translate="true">Max 150 characters</item>
+
+                </item>
+			</argument>
+			<settings>
+				<dataType>text</dataType>
+				<label translate="true">Producer name</label>
+				<dataScope>name</dataScope>
+				<validation>
+					<rule name="required-entry" xsi:type="boolean">true</rule>
+                    <rule name="max_text_length" xsi:type="number">150</rule>
+				</validation>
+			</settings>
+		</field>
+		<field name="description" formElement="textarea" sortOrder="30">
+			<argument name="data" xsi:type="array">
+				<item name="config" xsi:type="array">
+					<item name="source" xsi:type="string">Producer</item>
+                    <item name="notice" xsi:type="string" translate="true">Max 600 characters</item>
+				</item>
+			</argument>
+			<settings>
+				<dataType>text</dataType>
+				<label translate="true">Producer description</label>
+				<dataScope>description</dataScope>
+				<validation>
+					<rule name="required-entry" xsi:type="boolean">false</rule>
+                    <rule name="max_text_length" xsi:type="number">600</rule>
+				</validation>
+			</settings>
+		</field>
+
+        <field name="producer_image" sortOrder="40" formElement="imageUploader">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">Producer</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+            <settings>
+                <elementTmpl>ui/form/element/uploader/uploader</elementTmpl>
+                <dataType>string</dataType>
+                <label translate="true">Producer Image</label>
+                <visible>true</visible>
+            </settings>
+
+            <formElements>
+                <imageUploader>
+                    <settings>
+                        <required>false</required>
+                        <uploaderConfig>
+                            <param xsi:type="url" name="url" path="hieunv_wineproducer/producer/imageuploader"/>
+                        </uploaderConfig>
+                        <allowedExtensions>jpg png</allowedExtensions>
+                        <maxFileSize>4194304</maxFileSize>
+                        <validation>
+                            <rule name="required-entry" xsi:type="boolean">true</rule>
+                        </validation>
+                    </settings>
+                </imageUploader>
+            </formElements>
+        </field>
+
+		<field name="website" formElement="input" sortOrder="50">
+			<argument name="data" xsi:type="array">
+				<item name="config" xsi:type="array">
+					<item name="source" xsi:type="string">Producer</item>
+                    <item name="notice" xsi:type="string" translate="true">Require a valid url</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="validate-url" xsi:type="boolean">true</item>
+                    </item>
+				</item>
+			</argument>
+			<settings>
+				<dataType>text</dataType>
+				<label translate="true">Producer website</label>
+				<dataScope>website</dataScope>
+			</settings>
+		</field>
+    </fieldset>
+</form>
