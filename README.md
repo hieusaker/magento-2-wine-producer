@@ -22,19 +22,6 @@ HieuNV Magento Developer
  - Apply database updates by running `php bin/magento setup:upgrade`\*
  - Flush the cache by running `php bin/magento cache:flush`
 
-### Type 2: Composer
-
- - Make the module available in a composer repository for example:
-    - private repository `repo.magento.com`
-    - public repository `packagist.org`
-    - public github repository as vcs
- - Add the composer repository to the configuration by running `composer config repositories.repo.magento.com composer https://repo.magento.com/`
- - Install the module composer by running `composer require hieunv/module-wineproducer`
- - enable the module by running `php bin/magento module:enable Hieunv_WineProducer`
- - apply database updates by running `php bin/magento setup:upgrade`\*
- - Flush the cache by running `php bin/magento cache:flush`
-
-
 ## Producer Importing
 ### Importing producer to producer table: "hieunv_wine_producer". Only support csv format.
 - 1. Upload csv to folder var/import/producer/producer.csv
@@ -43,4 +30,4 @@ HieuNV Magento Developer
 
 
 
-
+    
